@@ -1,0 +1,103 @@
+{
+ "set": "rob",
+ "model": "eleven_v4",
+ "voice": "George - Warm, Captivating Storyteller",
+ "clips": {
+  "crater": {
+   "n": 1,
+   "title": "Inside the Crater",
+   "short": {
+    "file": "audio/rob/01-crater-short.mp3",
+    "sec": 29.6
+   },
+   "long": {
+    "file": "audio/rob/01-crater-long.mp3",
+    "sec": 124.4
+   }
+  },
+  "firostefani": {
+   "n": 2,
+   "title": "Fira's Crown",
+   "short": {
+    "file": "audio/rob/02-firostefani-short.mp3",
+    "sec": 26.0
+   },
+   "long": {
+    "file": "audio/rob/02-firostefani-long.mp3",
+    "sec": 118.0
+   }
+  },
+  "imerovigli": {
+   "n": 3,
+   "title": "The Lookout",
+   "short": {
+    "file": "audio/rob/03-imerovigli-short.mp3",
+    "sec": 28.3
+   },
+   "long": {
+    "file": "audio/rob/03-imerovigli-long.mp3",
+    "sec": 118.5
+   }
+  },
+  "skaros": {
+   "n": 4,
+   "title": "The Castle on the Rock",
+   "short": {
+    "file": "audio/rob/04-skaros-short.mp3",
+    "sec": 28.0
+   },
+   "long": {
+    "file": "audio/rob/04-skaros-long.mp3",
+    "sec": 122.8
+   }
+  },
+  "vines": {
+   "n": 5,
+   "title": "Vines in Baskets",
+   "short": {
+    "file": "audio/rob/05-vines-short.mp3",
+    "sec": 27.2
+   },
+   "long": {
+    "file": "audio/rob/05-vines-long.mp3",
+    "sec": 132.9
+   }
+  },
+  "high-chapel": {
+   "n": 6,
+   "title": "The High Chapel",
+   "short": {
+    "file": "audio/rob/06-high-chapel-short.mp3",
+    "sec": 27.4
+   },
+   "long": {
+    "file": "audio/rob/06-high-chapel-long.mp3",
+    "sec": 138.9
+   }
+  },
+  "oia": {
+   "n": 7,
+   "title": "The Captains' Town",
+   "short": {
+    "file": "audio/rob/07-oia-short.mp3",
+    "sec": 28.3
+   },
+   "long": {
+    "file": "audio/rob/07-oia-long.mp3",
+    "sec": 135.0
+   }
+  },
+  "fira": {
+   "n": 8,
+   "title": "Fira and the Way Down",
+   "short": {
+    "file": "audio/rob/08-fira-short.mp3",
+    "sec": 28.1
+   },
+   "long": {
+    "file": "audio/rob/08-fira-long.mp3",
+    "sec": 108.9
+   }
+  }
+ }
+}

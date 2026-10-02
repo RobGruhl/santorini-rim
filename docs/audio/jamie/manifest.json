@@ -1,0 +1,103 @@
+{
+ "set": "jamie",
+ "model": "eleven_v4",
+ "voice": "George - Warm, Captivating Storyteller",
+ "clips": {
+  "crater": {
+   "n": 1,
+   "title": "Living on a Volcano",
+   "short": {
+    "file": "audio/jamie/01-crater-short.mp3",
+    "sec": 30.7
+   },
+   "long": {
+    "file": "audio/jamie/01-crater-long.mp3",
+    "sec": 127.9
+   }
+  },
+  "firostefani": {
+   "n": 2,
+   "title": "Houses in the Rock",
+   "short": {
+    "file": "audio/jamie/02-firostefani-short.mp3",
+    "sec": 29.6
+   },
+   "long": {
+    "file": "audio/jamie/02-firostefani-long.mp3",
+    "sec": 116.8
+   }
+  },
+  "imerovigli": {
+   "n": 3,
+   "title": "Who Goes",
+   "short": {
+    "file": "audio/jamie/03-imerovigli-short.mp3",
+    "sec": 30.5
+   },
+   "long": {
+    "file": "audio/jamie/03-imerovigli-long.mp3",
+    "sec": 134.2
+   }
+  },
+  "skaros": {
+   "n": 4,
+   "title": "Living Inside the Walls",
+   "short": {
+    "file": "audio/jamie/04-skaros-short.mp3",
+    "sec": 30.0
+   },
+   "long": {
+    "file": "audio/jamie/04-skaros-long.mp3",
+    "sec": 136.0
+   }
+  },
+  "fields": {
+   "n": 5,
+   "title": "A Living from Dry Ground",
+   "short": {
+    "file": "audio/jamie/05-fields-short.mp3",
+    "sec": 29.1
+   },
+   "long": {
+    "file": "audio/jamie/05-fields-long.mp3",
+    "sec": 132.0
+   }
+  },
+  "high-chapel": {
+   "n": 6,
+   "title": "Saints on the Hilltops",
+   "short": {
+    "file": "audio/jamie/06-high-chapel-short.mp3",
+    "sec": 29.8
+   },
+   "long": {
+    "file": "audio/jamie/06-high-chapel-long.mp3",
+    "sec": 145.2
+   }
+  },
+  "oia": {
+   "n": 7,
+   "title": "Captains and Households",
+   "short": {
+    "file": "audio/jamie/07-oia-short.mp3",
+    "sec": 29.3
+   },
+   "long": {
+    "file": "audio/jamie/07-oia-long.mp3",
+    "sec": 137.6
+   }
+  },
+  "fira": {
+   "n": 8,
+   "title": "The Island Today",
+   "short": {
+    "file": "audio/jamie/08-fira-short.mp3",
+    "sec": 29.9
+   },
+   "long": {
+    "file": "audio/jamie/08-fira-long.mp3",
+    "sec": 121.1
+   }
+  }
+ }
+}

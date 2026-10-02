@@ -1,0 +1,3 @@
+{"name": "Santorini, along the rim", "short_name": "Santorini", "start_url": "./", "display": "standalone",
+ "background_color": "#FAF8F3", "theme_color": "#2B5D8A",
+ "icons": [{"src": "icon-180.png", "sizes": "180x180", "type": "image/png"}, {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}]}

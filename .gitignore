@@ -1,0 +1,4 @@
+album/
+.DS_Store
+*.env
+.env

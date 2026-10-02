@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santorini Rim Walk</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#2B5D8A">
+<style>
+:root { --bg:#FAF8F3; --ink:#1F2A33; --muted:#5B6770; --accent:#2B5D8A; --rule:#E2DED4; --card:#FFFFFF; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg:#12171C; --ink:#E8E6E1; --muted:#9AA5AE; --accent:#7FB0DD; --rule:#2A333B; --card:#1A2128; }
+}
+:root[data-theme="dark"] { --bg:#12171C; --ink:#E8E6E1; --muted:#9AA5AE; --accent:#7FB0DD; --rule:#2A333B; --card:#1A2128; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.6 Georgia, "Iowan Old Style", serif; }
+main { max-width:40rem; margin:0 auto; padding:16px; }
+header h1 { font-size:1.7rem; margin:.4rem 0 0; }
+header p { color:var(--muted); margin:.2rem 0 1rem; font-size:.95rem; }
+.who { display:flex; gap:.5rem; position:sticky; top:0; background:var(--bg); padding:.5rem 0; border-bottom:1px solid var(--rule); z-index:1; }
+.who button { flex:1; font:inherit; font-size:1rem; padding:.5rem; border:1px solid var(--accent); background:transparent; color:var(--accent); border-radius:8px; }
+.who button[aria-pressed="true"] { background:var(--accent); color:var(--bg); }
+.track { display:none; } .track.on { display:block; }
+.stop { background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:14px 16px; margin:16px 0; }
+.stop h2 { font-size:1.2rem; margin:0 0 .3rem; display:flex; gap:.6rem; align-items:baseline; }
+.n { color:var(--accent); font-variant-numeric:tabular-nums; }
+.where { color:var(--muted); font-size:.9rem; margin:0 0 .6rem; font-style:italic; }
+.clip { margin:.4rem 0; } .clip span { font-size:.85rem; color:var(--muted); display:block; }
+audio { width:100%; }
+details { margin-top:.6rem; } summary { color:var(--accent); cursor:pointer; font-size:.95rem; }
+details p { margin:.7rem 0; }
+.save { margin:1rem 0 .4rem; font-size:.9rem; color:var(--muted); }
+.save button { font:inherit; font-size:.95rem; padding:.45rem .8rem; border-radius:8px; border:1px solid var(--accent); background:transparent; color:var(--accent); }
+.save p { margin:.4rem 0 0; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Santorini, along the caldera rim</h1>
+  <p>Saturday 3 October 2026, ashore from Scarlet Lady. Long clips for when you stop, short ones for when the group keeps moving.</p>
+</header>
+<nav class="who"><button data-set="rob">Rob</button><button data-set="jamie">Jamie</button></nav>
+<div class="save"><button id="save">Save this track for offline</button>
+<p id="saveinfo">On iPhone, add this page to the Home Screen first, then save from the Home Screen app.</p></div>
+<!--TRACKS-->
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search).get('as'), saved = null;
+  try { saved = localStorage.getItem('as'); } catch (e) {}
+  function show(who) {
+    document.querySelectorAll('.track').forEach(function (t) { t.classList.toggle('on', t.dataset.set === who); });
+    document.querySelectorAll('.who button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.set === who); });
+    try { localStorage.setItem('as', who); } catch (e) {}
+  }
+  document.querySelectorAll('.who button').forEach(function (b) { b.onclick = function () { show(b.dataset.set); }; });
+  show(q === 'jamie' || q === 'rob' ? q : (saved || 'rob'));
+  // offline: a service worker keeps the page; the button stores this track's clips
+  var info = document.getElementById('saveinfo'), btn = document.getElementById('save');
+  if ('serviceWorker' in navigator && 'caches' in window) {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+    btn.onclick = async function () {
+      var who = document.querySelector('.track.on').dataset.set;
+      var srcs = Array.from(document.querySelectorAll('.track.on audio')).map(function (a) { return a.getAttribute('src'); });
+      btn.disabled = true;
+      var cache = await caches.open('santorini-audio'), done = 0, failed = 0;
+      for (var i = 0; i < srcs.length; i++) {
+        var url = new URL(srcs[i], location.href).href;
+        try {
+          if (!(await cache.match(url))) { var r = await fetch(url, {cache: 'reload'}); if (!r.ok) throw 0; await cache.put(url, r); }
+          done++;
+        } catch (e) { failed++; }
+        info.textContent = 'Saving ' + who + "'s clips: " + done + ' of ' + srcs.length + (failed ? ' (' + failed + ' failed)' : '');
+      }
+      info.textContent = failed ? failed + ' clips failed; tap again with better signal.' : 'All ' + done + ' clips saved on this phone. Test in airplane mode.';
+      btn.disabled = false;
+    };
+  } else { btn.hidden = true; info.textContent = 'This browser cannot save for offline; stream with signal.'; }
+  // one clip at a time
+  document.addEventListener('play', function (e) {
+    document.querySelectorAll('audio').forEach(function (a) { if (a !== e.target) a.pause(); });
+  }, true);
+})();
+</script>
+</body>
+</html>
