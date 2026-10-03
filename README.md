@@ -2,12 +2,12 @@
 
 A minimal audio walking tour for Saturday 3 October 2026, ashore from Virgin Voyages' *Scarlet Lady* (07:00 to 19:00, tender port). Built for the Shore Thing "Hiking Adventure to Oia": the caldera rim path from Firostefani through Imerovigli, past Skaros Rock and over the Profitis Ilias high point, down into Oia. It's the small sibling of [Rhodes Landfall](https://github.com/RobGruhl/rhodes-landfall).
 
-Two tracks share eight stops, each in a short version (about forty seconds) and a long one (two to three minutes):
+Two tracks share nine stops, each in a short version (about forty seconds) and a long one (two to three minutes):
 
 - **Rob** (`narration/rob.json`): the volcano, Akrotiri and Atlantis, the Venetian castle on Skaros, pirates and the Aegean's free companies, Assyrtiko, Vinsanto and fava.
 - **Jamie** (`narration/jamie.json`): living on a volcano, cave houses and cisterns, who stays and who goes (Cyrene to 1956), two churches under Venetian and Ottoman rule, farming dry ground, chapels, vows and vrykolakas, the captains' wives of Oia, the island today. Rendered steadier and softer.
 
-Stop 1 is for the tender or the coach up from Athinios; stop 8 is for Fira and the cable car, if the day ends there.
+Stop 1 is for the tender or the coach up from Athinios; stop 8 is for Fira and the cable car, if the day ends there; stop 9, the same in both tracks, is local food and where to have lunch in Oia.
 
 ## Build
 

@@ -1,7 +1,7 @@
 // Santorini service worker: keeps the page and saved audio on the phone.
 // The page lives in a versioned cache (build.py stamps VERSION); audio lives in its own
 // unversioned cache so a page update never throws away downloaded clips.
-const VERSION = '63db38e63b';
+const VERSION = 'a60a1b2ed4';
 const SHELL = 'santorini-shell-' + VERSION;
 const AUDIO = 'santorini-audio';
 const SHELL_FILES = ['./', 'index.html', 'manifest.webmanifest', 'icon-180.png', 'icon-512.png'];

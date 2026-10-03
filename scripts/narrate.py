@@ -42,6 +42,8 @@ SAY = {                          # Greek stress via IPA; research/pron/{plain,ip
     "Skaros": "/ˈskaɾos/", "Akrotiri": "/akɾoˈtiɾi/", "Thirasia": "/θiɾaˈsia/", "Kameni": "/kaˈmɛni/",
     "hyposkafa": "/iˈposkafa/", "Theoskepasti": "/θɛoskɛpaˈsti/", "kouloura": "/kuˈluɾa/", "Assyrtiko": "/asiɾˈtiko/",
     "panigyria": "/paniʝiˈɾia/", "vrykolakas": "/vɾiˈkolakas/", "Ammoudi": "/aˈmuði/",
+    "Tomatokeftedes": "/tomatoˈcɛftɛðɛs/", "chloro": "/xloˈɾo/", "Melitini": "/mɛliˈtini/", "Pitogyros": "/pitoˈʝiɾos/",
+    "Lotza": "/ˈlodza/",
 }
 AUDIT = Path(os.environ.get("AGENT_VOICE_AUDIT_LOG", Path.home() / ".local/state/agent-voice/audit.log"))
 
